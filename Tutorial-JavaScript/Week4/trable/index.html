@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Tabletop.js</title>
+    <style type="text/css">
+      body{
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript" src="javascript/main.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){init()};
+      var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQgbxu9XVprY5_DePEC8nsNFPva_QI8dpJAmYIRoXKUuFrEHS1uXx1XPxfc91huillcHdJ9g2QzhOU6/pubhtml';
+      function init() {
+        Tabletop.init( { key: publicSpreadsheetUrl,
+                         callback: showInfo,
+                         simpleSheet: true } )
+      }
+      function showInfo(data, tabletop) {
+        alert('Successfully processed!')
+        console.log(data);
+      }
+    </script>
+  </body>
+</html>
